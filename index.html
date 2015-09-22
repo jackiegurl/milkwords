@@ -18,22 +18,27 @@
 <!-- createdWords on top !--><BR><BR>
 <span ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
 {{ createdWords }}
-</BR>
-</span><BR>
+</BR></span><BR>
 
 <span ng-repeat="madeWords in madeNames">
 {{ madeWords }}<BR>
 </span><BR>
 
+<!-- on submit, will append the words !-->
 <input type="text" class="beep" ng-model="name"/>
-<button>submit</button>
+<button>submit</button><BR>
 
-<BR>
-<i> suggestions:</i><BR>
-<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">{{ words }}</div>
-<BR>
+<!-- checks to see if synonyms exist. if so, then append "suggestions" !-->
+<div ng-if="clean" ng-click="clear(clean)">
+<i><b>suggestions:</b></i>
+</div>
+<!-- will append synonyms if they are created and found by the API !-->
+<div class="suggestionsFooter">
+<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">
+{{ words }}
+</div></div><BR>
 
-<!-- on click! to make the words show. -->
+<!-- on click! to make the generated words show -->
 <button ng-click="madeIt()" class="gen">generate words!</button><BR>
 
 </form>

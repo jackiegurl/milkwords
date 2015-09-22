@@ -40,7 +40,7 @@ angular.module('cereal',[])
    	 })
    }
 
-   $scope.clearArray = function(array) {
+   $scope.clear = function(array) {
       while (array.length) {
        array.pop();
       }

@@ -52,6 +52,10 @@ body {
 	position:10px;
 }
 
+.suggestionsFooter {
+	font-family:untitled;
+	font-size:12.5px;
+}
 
 .words {
 	display:inline-block;
