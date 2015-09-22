@@ -2,14 +2,12 @@ angular.module('cereal',[])
 
 .controller('milkBottle', function($scope, Links){
     $scope.names = [];
-    $scope.madeNames = [];
     $scope.inbetween = ''
 
     $scope.addNames = function(link) {
     	$scope.names.push(link);
     	$scope.name = '';
     	$scope.getWords(link)
-    	console.log($scope.names)
    }
 
     $scope.addSyn = function(link) {
@@ -40,12 +38,6 @@ angular.module('cereal',[])
    	 })
    }
 
-   $scope.clear = function(array) {
-      while (array.length) {
-       array.pop();
-      }
-     }
-  
    $scope.makeNames = function() {
    	 var namesArray = $scope.names;
    	 
@@ -59,6 +51,11 @@ angular.module('cereal',[])
    	 }
     }
 
+   $scope.clear = function(array) {
+   	while(array.length) {
+   		array.pop()
+   	}
+   }
    $scope.madeIt = function() {
    	$scope.makeNames();
    	console.log($scope.madeNames)

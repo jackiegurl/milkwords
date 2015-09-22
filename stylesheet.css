@@ -1,18 +1,19 @@
 body {
+/*	background-image: url('bottle.png');
+	background-position: 575px 10px;
+	background-repeat: no-repeat;
+	margin-top: 0px;*/
 	background-color: #eae1dc;
 	font-family:untitled;
 	font-size:14px;
 }
 
-/*
-.scroll {
+
+#inContainer {
 		position:relative;
-    top:-900px;
-    left:635px;
-    background-color: transparent;
-    width: 165px;
-    height: 280px;
-/*    overflow: scroll;*/
+		background-color:blue;
+    top:-300px;
+    left:0px;
 }
 
 .scroll2 {
@@ -57,12 +58,6 @@ body {
 	font-size:12.5px;
 }
 
-.words {
-	display:inline-block;
-  font-size:11px;
-	font-family:consolas;
-}
-
 button{
 	border-color:#000;
 	width:7em;
@@ -72,13 +67,17 @@ button{
 	text-transform: uppercase;
 }
 
-button.gen{
+.gen{
 	border-color:#000;
 	width:12em;
 	height:3em;
 	font-family:untitled;
 	background-color: transparent;
 	text-transform: uppercase;
+}
+
+.gen:hover{
+	background-color:#fff;
 }
 
 
