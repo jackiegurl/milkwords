@@ -32,6 +32,8 @@ angular.module('cereal',[])
    	 	}
    	 	// $scope.synonyms.push(thesaurus.data)
    	  console.log($scope.synonyms)
+   	  $scope.clean = ($scope.synonyms).slice(0,5)
+   	  console.log($scope.clean)
    	 	// var string = JSON.stringify(parsed)
    	 	// $scope.synonyms.push(string)
    	 	// console.log($scope.synonyms)
