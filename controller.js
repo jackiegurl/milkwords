@@ -29,6 +29,14 @@ angular.module('cereal',[])
    	console.log($scope.madeNames)
    }
 
+   $scope.removeName = function(item) {
+   	var namesArray = $scope.names;
+   	var getIndex = namesArray.indexOf(item) 
+
+   	if(getIndex > -1) {
+   		namesArray.splice(getIndex, 1)
+   	}
+   }
 })
 
 .directive('word', function() {

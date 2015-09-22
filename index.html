@@ -16,9 +16,10 @@
 
 <form ng-submit="addNames(name)" ng-controller="milkBottle">
 <!-- createdWords on top !-->
-<span ng-repeat="createdWords in names">
-{{ createdWords }}
+<span ng-repeat="createdWords in names" ng-click="removeName(createdWords)">
+{{ createdWords }}<BR>
 </span><BR><BR>
+
 <span ng-repeat="madeWords in madeNames">
 {{ madeWords }}<BR>
 </span><BR><BR>
@@ -28,7 +29,6 @@
 
 <BR>
 <BR>
-
 
 <!-- on click! to make the words show. -->
 <button ng-click="madeIt()" class="gen">generate words!</button><BR>
