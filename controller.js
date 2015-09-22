@@ -1,6 +1,6 @@
 angular.module('cereal',[])
 
-.controller('milkBottle', function($scope){
+.controller('milkBottle', function($scope, Links){
     $scope.names = [];
     $scope.madeNames = [];
     $scope.inbetween = ''
@@ -8,9 +8,42 @@ angular.module('cereal',[])
     $scope.addNames = function(link) {
     	$scope.names.push(link);
     	$scope.name = '';
+    	$scope.getWords(link)
     	console.log($scope.names)
    }
 
+    $scope.addSyn = function(link) {
+    	$scope.names.push(link);
+    	$scope.words = '';
+   }
+
+   $scope.getWords = function(data) {
+   	 Links.getWords(data).then(function(thesaurus) {
+   	 	// var filitered = _.where(thesaurus, {adjective: syn})
+
+   	  $scope.synonyms = [];
+   	 	var divideLine = (thesaurus.data).split('\n')
+   	 	for(var i = 0; i < divideLine.length; i++) {
+   	 		if(divideLine[i].indexOf('syn|') > -1) {
+   	 			var index = divideLine[i].indexOf('syn|')
+   	 			var wordAfterSyn = index+4
+   	 			$scope.synonyms.push(divideLine[i].slice(wordAfterSyn,divideLine[i].length))
+   	 		}
+   	 	}
+   	 	// $scope.synonyms.push(thesaurus.data)
+   	  console.log($scope.synonyms)
+   	 	// var string = JSON.stringify(parsed)
+   	 	// $scope.synonyms.push(string)
+   	 	// console.log($scope.synonyms)
+   	 })
+   }
+
+   $scope.clearArray = function(array) {
+      while (array.length) {
+       array.pop();
+      }
+     }
+  
    $scope.makeNames = function() {
    	 var namesArray = $scope.names;
    	 
@@ -37,6 +70,8 @@ angular.module('cereal',[])
    		namesArray.splice(getIndex, 1)
    	}
    }
+
+
 })
 
 .directive('word', function() {

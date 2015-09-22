@@ -1,6 +1,7 @@
 body {
 	background-color: #eae1dc;
 	font-family:untitled;
+	font-size:14px;
 }
 
 /*
@@ -23,6 +24,12 @@ body {
     width: 165px;
     height: 280px;
     overflow: scroll;
+}
+
+.boxedWords {
+	background-color:#fff;
+	width:100px;
+	height:100px;
 }
 
 .beep{

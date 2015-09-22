@@ -5,7 +5,7 @@
 <link href="stylesheet.css" rel="stylesheet" type="text/css">
 <script src="./node_modules/angular/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-
+<script src="./node_modules/underscore/underscore.js"></script>
 
 </head>
 
@@ -15,19 +15,22 @@
 <!-- <img src="./bottle.png"><BR> -->
 
 <form ng-submit="addNames(name)" ng-controller="milkBottle">
-<!-- createdWords on top !-->
-<span ng-repeat="createdWords in names" ng-click="removeName(createdWords)">
-{{ createdWords }}<BR>
-</span><BR><BR>
+<!-- createdWords on top !--><BR><BR>
+<span ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
+{{ createdWords }}
+</BR>
+</span><BR>
 
 <span ng-repeat="madeWords in madeNames">
 {{ madeWords }}<BR>
-</span><BR><BR>
+</span><BR>
 
 <input type="text" class="beep" ng-model="name"/>
 <button>submit</button>
 
 <BR>
+<i> suggestions:</i><BR>
+<div ng-repeat="words in synonyms track by $index" ng-click="addSyn(words)" ng-model="word">{{ words }}</div>
 <BR>
 
 <!-- on click! to make the words show. -->

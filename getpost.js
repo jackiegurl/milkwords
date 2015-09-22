@@ -5,7 +5,7 @@ angular.module('server', [])
   var getWords = function(data) {
     return $http({
       method: 'GET',
-      url:'http://words.bighugelabs.com/api/2/1a2142fa9cc2310c617df8e5592bacc5/' + data,
+      url:'http://words.bighugelabs.com/api/2/1a2142fa9cc2310c617df8e5592bacc5/' + data + '/',
       data: data
     })
   }
@@ -13,7 +13,7 @@ angular.module('server', [])
   var addWords = function(link) {
     return $http({
       method: 'POST',
-      url:'http://words.bighugelabs.com/api/2/1a2142fa9cc2310c617df8e5592bacc5/' + data,
+      url:'http://words.bighugelabs.com/api/2/1a2142fa9cc2310c617df8e5592bacc5/' + data + '/',
       data: link
     })
   }
