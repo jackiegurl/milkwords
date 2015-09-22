@@ -1,0 +1,44 @@
+<html ng-app='eggsBacon'>
+
+<head>
+<title>milkWords</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+
+</head>
+
+<body>
+<center>
+
+<!-- <img src="./bottle.png"><BR> -->
+
+<form ng-submit="addNames(name)" ng-controller="milkBottle">
+<!-- createdWords on top !-->
+<span ng-repeat="createdWords in names">
+{{ createdWords }}
+</span><BR><BR>
+<span ng-repeat="madeWords in madeNames">
+{{ madeWords }}<BR>
+</span><BR><BR>
+
+<input type="text" class="beep" ng-model="name"/>
+<button>submit</button>
+
+<BR>
+<BR>
+
+
+<!-- on click! to make the words show. -->
+<button ng-click="madeIt()" class="gen">generate words!</button><BR>
+
+</form>
+
+
+<script src="./getpost.js"></script>
+<script src="./controller.js"></script>
+<script src="./app.js"></script>
+
+
+</body></html>
