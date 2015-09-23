@@ -6,24 +6,31 @@
 	<script src="./node_modules/angular/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 	<script src="./node_modules/underscore/underscore.js"></script>
-	<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <link rel="stylesheet" href="./animate.css">
+
 </head>
 <center>
-<!-- <div class=container></div>  -->
-<!-- <div id="container"></div> -->
+<body ng-style="bodyStyle">
 
+<div class="container"></div>
 <form ng-submit="addNames(name)" ng-controller="milkBottle">
-	<div ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
-	  {{ createdWords }}
+
+	<div class="scroll2">
+		<div class="words">
+			<div ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
+			  {{ createdWords }}
+		 </div>
+	 </div>
  </div>
 <BR>
 
-<span ng-repeat="madeWords in madeNames">
+<span ng-repeat="madeWords in madeNames" class="animated bounce">
 	{{ madeWords }}<BR>
 </span>
 
 <input type="text" class="beep" ng-model="name">
-	<button>submit</button><BR>
+	<button ng-click="addMilk()">submit</button><BR>
 
 <div ng-if="clean" ng-click="clear(clean)">
 	<i><b>suggestions:</b></i></div>
@@ -33,7 +40,7 @@
 	</div>
 </div><BR>
 
-<button ng-click="madeIt()">MILK</button><BR>
+<button ng-click="madeIt()" class="gen">MILK</button><BR>
 
 </body>
 	<script src="./getpost.js"></script>

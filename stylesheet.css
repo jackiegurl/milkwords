@@ -1,13 +1,18 @@
 body {
-/*	background-image: url('bottle.png');
-	background-position: 575px 10px;
+	background-image: url('bottle.png');
+	background-position: 575px 26px;
 	background-repeat: no-repeat;
-	margin-top: 0px;*/
 	background-color: #eae1dc;
 	font-family:untitled;
 	font-size:14px;
+	scrollbar-face-color: #000000;
 }
 
+
+.container {
+	position:relative;
+	height:485px;
+}
 
 #inContainer {
 		position:relative;
@@ -17,20 +22,19 @@ body {
 }
 
 .scroll2 {
-		position:fixed;
+		position:absolute;
 		z-index:-1;
-    top:240px;
-    left:635px;
+    top:160px;
+    left:649.5px;
     background-color: transparent;
-    width: 165px;
-    height: 280px;
+    width: 135px;
+    height: 260px;
     overflow: scroll;
 }
 
-.boxedWords {
-	background-color:#fff;
-	width:100px;
-	height:100px;
+.words {
+	font-size:16px;
+	line-height:20px;
 }
 
 .beep{
@@ -38,7 +42,7 @@ body {
 	background-color: transparent;
 	border-color:transparent;
 	border-bottom-color: #000;
-	width:30em;
+	width:25em;
 	height:3em;
 	position:10px;
 }
@@ -81,6 +85,3 @@ button{
 }
 
 
-.section > div:nth-of-type(4n+1){
-  clear:both;
-}

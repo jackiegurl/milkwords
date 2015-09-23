@@ -1,1 +1,0 @@
-getpost.js

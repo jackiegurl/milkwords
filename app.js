@@ -1,4 +1,4 @@
-angular.module('eggsBacon', ['cereal','server', 'ngRoute', 'ngAnimate'])
+angular.module('eggsBacon', ['cereal','server', 'ngRoute'])
 
 .config(function($routeProvider) {
   $routeProvider.
