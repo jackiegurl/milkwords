@@ -1,26 +1,32 @@
 <html ng-app='eggsBacon'>
 <head>
 <title>milkWords</title>
-
+  
 	<link href="./assets/css/stylesheet.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./assets/css/animate.css">
-	<script src="./node_modules/angular/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-	<script src="./node_modules/underscore/underscore.js"></script>
-  <script src="./node_modules/jquery/dist/jquery.js"></script>
-  
+  <link rel="stylesheet" href="./assets/css/css3cheatsheet.css">
+
 </head>
+<div class="header"><a href="file:///Users/jackiewung/MVP/index.html">retry</a></div>
+
 <center>
 <body>
 
-<div class="container"></div>
+
+<div id="object" class="hatch">
+<img src="./assets/img/face2.gif">
+</div>
+
 <form ng-submit="addNames(name)" ng-controller="milkBottle">
 
+<div ng-hide="container"></div>
 
 <div class="scrollBox">
 	<div class="words">
-		<div ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
+	 <div class="animate bounce">
+		<div ng-repeat="createdWords in names track by $index" ng-click="removeName(names, createdWords)">
 			  {{ createdWords }}
+			 </div>
 		 </div>
 	 </div>
  </div>
@@ -50,22 +56,33 @@
 <div ng-if="clean" ng-click="clear(clean)">
 	<i><b>suggestions:</b></i></div>
 		<div class="suggestionsFooter">
-			<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">
-			{{ words }}
+			<div ng-repeat="words in clean track by $index" ng-model="word">
+			 <div ng-click="removeName(clean, words)">
+				 <div ng-click="addSyn(words)">
+					 {{ words }}
+			 </div>
+		 </div>
 	</div>
 </div>
+</BR>
+
+<button ng-click="makeNames()" class="gen">MILK</button><BR>
+
 
 <div ng-if="instaWordImages">
 	<div class=scrollInsta>
 		<div ng-repeat="(key, value) in instaWordImages">
+				<div class="images">
 				<a ng-href={{key}}><img ng-src={{value}} ng-href={{key}}></a>
-				<BR><BR>
+				</div>
 		</div>
 	</div>
-</div><BR>
+</div>
 
-<button ng-click="makeNames()" class="gen">MILK</button><BR>
-
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/underscore/underscore.js"></script>
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 <script src="./assets/javascript/requests.js"></script>
 <script src="./assets/javascript/controller.js"></script>
 <script src="./assets/javascript/app.js"></script>

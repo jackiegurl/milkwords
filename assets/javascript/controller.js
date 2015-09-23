@@ -60,6 +60,9 @@ angular.module('cereal',[])
    $scope.makeNames = function() { 
   
     $('body').css({'background-image': 'url("")'})
+    $('#object').remove()
+    $('input').remove()
+    $('button').remove()
 
      $scope.madeNames = [];
      var namesArray = $scope.names;
@@ -71,7 +74,7 @@ angular.module('cereal',[])
         $scope.madeNames.push(firstWord + ' and ' + namesArray[x]);
       }
      }
-     $scope.randomName = $scope.madeNames[5]
+     $scope.randomName = $scope.madeNames[1]
     $scope.names = ''
     $scope.clean = ''
   }
@@ -83,13 +86,11 @@ angular.module('cereal',[])
    	}
    }
 
-   $scope.removeName = function(item) {
-   	var namesArray = $scope.names
-    console.log('LOL')
-   	var getIndex = namesArray.indexOf(item) 
+   $scope.removeName = function(array, item) {
+   	var getIndex = array.indexOf(item) 
 
    	if(getIndex > -1) {
-   		namesArray.splice(getIndex, 1)
+   		array.splice(getIndex, 1)
    	}
    }
 
@@ -100,7 +101,7 @@ angular.module('cereal',[])
       var pictures = $scope.imageList
 
       var milk = './assets/img/bottleImages/' + number + '.png'
-      $('body').css({'background-image': 'url('+milk+')'})
+      $('body').css({'background-image': 'url('+milk+')'});
     } else {
       $scope.errorDisplay = 'Sorry, 12 words is the maximum!'
     }
