@@ -1,38 +1,42 @@
 <html ng-app='eggsBacon'>
-
 <head>
 <title>milkWords</title>
-	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+	<link href="./assets/css/stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./assets/css/animate.css">
 	<script src="./node_modules/angular/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 	<script src="./node_modules/underscore/underscore.js"></script>
   <script src="./node_modules/jquery/dist/jquery.js"></script>
-  <link rel="stylesheet" href="./animate.css">
-
+  
 </head>
 <center>
-<body ng-style="bodyStyle">
+<body>
 
 <div class="container"></div>
 <form ng-submit="addNames(name)" ng-controller="milkBottle">
 
-	<div class="scroll2">
-		<div class="words">
-			<div ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
+
+<div class="scrollBox">
+	<div class="words">
+		<div ng-repeat="createdWords in names track by $index" ng-click="removeName(createdWords)">
 			  {{ createdWords }}
 		 </div>
 	 </div>
  </div>
 <BR>
 
+{{ errorDisplay }}
+
 <div class="scrollWords">
-	<span ng-repeat="madeWords in madeNames" class="animated bounce">
+	<span ng-repeat="madeWords in madeNames" class="animated bounce" ng-click="getInstagram(madeWords)">
 		{{ madeWords }}<BR>
 	</span>
 </div>
 
-<input type="text" class="beep" ng-model="name">
-	<button ng-click="addMilk()">submit</button><BR>
+<input type="text" class="buttonStyle" ng-model="name" placeholder="mix up to 13 words">
+
+<button ng-click="addMilk()">ADD</button><BR>
 
 <div ng-if="clean" ng-click="clear(clean)">
 	<i><b>suggestions:</b></i></div>
@@ -40,12 +44,22 @@
 	<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">
 	{{ words }}
 	</div>
+</div>
+
+<div ng-if="instaWordImages">
+	<div class=scrollInsta>
+		<div ng-repeat="(key, value) in instaWordImages">
+				<a ng-href={{key}}><img ng-src={{value}} ng-href={{key}}></a>
+				<BR><BR>
+		</div>
+	</div>
 </div><BR>
 
-<button ng-click="madeIt()" class="gen">MILK</button><BR>
+<button ng-click="makeNames()" class="gen">MILK</button><BR>
+
+<script src="./assets/javascript/requests.js"></script>
+<script src="./assets/javascript/controller.js"></script>
+<script src="./assets/javascript/app.js"></script>
 
 </body>
-	<script src="./getpost.js"></script>
-	<script src="./controller.js"></script>
-	<script src="./app.js"></script>
 </html>

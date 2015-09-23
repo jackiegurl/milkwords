@@ -1,13 +1,11 @@
 body {
-	background-image: url('bottle.png');
+	background-image: url('../img/emptyBottle.png');
 	background-position: 575px 26px;
 	background-repeat: no-repeat;
 	background-color: #eae1dc;
 	font-family:untitled;
 	font-size:14px;
-	scrollbar-face-color: #000000;
 }
-
 
 .container {
 	position:relative;
@@ -15,35 +13,39 @@ body {
 	z-index:-1;
 }
 
-#inContainer {
-		position:relative;
-		background-color:blue;
-    top:-300px;
-    left:0px;
+.scrollBox {
+	position:absolute;
+	z-index:2;
+  top:160px;
+  left:649.5px;
+  background-color: transparent;
+  width: 135px;
+  height: 260px;
+  overflow: scroll;
 }
 
-.scroll2 {
-		position:absolute;
-		z-index:2;
-    top:160px;
-    left:649.5px;
-    background-color: transparent;
-    width: 135px;
-    height: 260px;
-    overflow: scroll;
+.scrollInsta {
+	position:absolute;
+	z-index:2;
+  top:20px;
+  left:980.5px;
+  background-color: transparent;
+  width: 150px;
+  height: 500px;
+  overflow: scroll;
 }
 
 .scrollWords {
-		position:absolute;
-		z-index:2;
-    top:40px;
-    left:465.5px;
-    background-color: transparent;
-    width: 500px;
-    height: 400px;
-    overflow: scroll;
-    overflow-y: auto;
-   overflow-x: hidden;
+	position:absolute;
+	z-index:2;
+  top:40px;
+  left:465.5px;
+  background-color: transparent;
+  width: 500px;
+  height: 400px;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .words {
@@ -51,22 +53,12 @@ body {
 	line-height:20px;
 }
 
-.beep{
+.buttonStyle{
 	font-family:untitled;
 	background-color: transparent;
 	border-color:transparent;
 	border-bottom-color: #000;
 	width:25em;
-	height:3em;
-	position:10px;
-}
-
-.second{
-	font-family:untitled;
-	background-color: transparent;
-	border-color:transparent;
-	border-bottom-color: #000;
-	width:10em;
 	height:3em;
 	position:10px;
 }
@@ -78,6 +70,7 @@ body {
 
 button{
 	border-color:#000;
+	border-width:0px;
 	width:7em;
 	height:3em;
 	font-family:untitled;
@@ -94,12 +87,12 @@ button:hover {
 	width:12em;
 	height:3em;
 	font-family:untitled;
-	background-color: transparent;
+	background-color: white;
 	text-transform: uppercase;
 }
 
 .gen:hover{
+	border-width:1px;
+	border-color:#000;
 	background-color:#fff;
 }
-
-
