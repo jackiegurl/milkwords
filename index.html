@@ -25,9 +25,11 @@
  </div>
 <BR>
 
-<span ng-repeat="madeWords in madeNames" class="animated bounce">
-	{{ madeWords }}<BR>
-</span>
+<div class="scrollWords">
+	<span ng-repeat="madeWords in madeNames" class="animated bounce">
+		{{ madeWords }}<BR>
+	</span>
+</div>
 
 <input type="text" class="beep" ng-model="name">
 	<button ng-click="addMilk()">submit</button><BR>

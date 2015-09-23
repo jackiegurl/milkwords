@@ -8,12 +8,14 @@ angular.module('cereal',[])
     $scope.addNames = function(link) {
       $scope.names.push(link);
     	$scope.name = '';
+      $scope.madeWords = ''
     	$scope.getWords(link)
    }
 
     $scope.addSyn = function(link) {
     	$scope.names.push(link);
     	$scope.words = '';
+      $scope.addMilk()
    }
 
    $scope.getWords = function(data) {
@@ -38,7 +40,6 @@ angular.module('cereal',[])
    $scope.makeNames = function() { 
   
     $('body').css({'background-image': 'url("")'})
-    $('div').removeClass('container');
 
      $scope.madeNames = [];
      var namesArray = $scope.names;
@@ -52,6 +53,7 @@ angular.module('cereal',[])
       }
      }
     $scope.names = ''
+    $scope.clean = ''
     }
 
 

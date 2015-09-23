@@ -12,6 +12,7 @@ body {
 .container {
 	position:relative;
 	height:485px;
+	z-index:-1;
 }
 
 #inContainer {
@@ -23,13 +24,26 @@ body {
 
 .scroll2 {
 		position:absolute;
-		z-index:-1;
+		z-index:2;
     top:160px;
     left:649.5px;
     background-color: transparent;
     width: 135px;
     height: 260px;
     overflow: scroll;
+}
+
+.scrollWords {
+		position:absolute;
+		z-index:2;
+    top:40px;
+    left:465.5px;
+    background-color: transparent;
+    width: 500px;
+    height: 400px;
+    overflow: scroll;
+    overflow-y: auto;
+   overflow-x: hidden;
 }
 
 .words {
@@ -69,6 +83,10 @@ button{
 	font-family:untitled;
 	background-color: transparent;
 	text-transform: uppercase;
+}
+
+button:hover {
+	background-color:#fff;
 }
 
 .gen{
