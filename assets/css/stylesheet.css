@@ -1,5 +1,6 @@
 body {
 	background-image: url('../img/emptyBottle.png');
+	z-index:-1;
 	background-position: 575px 26px;
 	background-repeat: no-repeat;
 	background-color: #eae1dc;
@@ -11,6 +12,10 @@ body {
 	position:relative;
 	height:485px;
 	z-index:-1;
+}
+
+.bigSuggestion{
+	font-size:35px;
 }
 
 .scrollBox {
@@ -35,20 +40,34 @@ body {
   overflow: scroll;
 }
 
-.scrollWords {
+.randomSuggestion {
 	position:absolute;
 	z-index:2;
-  top:40px;
+  top:20px;
   left:465.5px;
   background-color: transparent;
   width: 500px;
-  height: 400px;
+  height: 80px;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scrollWords {
+	position:absolute;
+	z-index:2;
+  top:125px;
+  left:465.5px;
+  background-color: transparent;
+  width: 500px;
+  height: 330px;
   overflow: scroll;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .words {
+	z-index:2;
 	font-size:16px;
 	line-height:20px;
 }

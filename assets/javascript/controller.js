@@ -71,6 +71,7 @@ angular.module('cereal',[])
         $scope.madeNames.push(firstWord + ' and ' + namesArray[x]);
       }
      }
+     $scope.randomName = $scope.madeNames[5]
     $scope.names = ''
     $scope.clean = ''
   }
@@ -84,6 +85,7 @@ angular.module('cereal',[])
 
    $scope.removeName = function(item) {
    	var namesArray = $scope.names
+    console.log('LOL')
    	var getIndex = namesArray.indexOf(item) 
 
    	if(getIndex > -1) {

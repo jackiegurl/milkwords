@@ -28,6 +28,16 @@
 
 {{ errorDisplay }}
 
+<div ng-if="randomName">
+	<div class="randomSuggestion">
+		<div ng-click="getInstagram(randomName)">
+			How does<BR>
+			<div class="bigSuggestion">{{ randomName }}</div>
+			sound?<BR>
+		</div>
+	</div>
+</div>
+
 <div class="scrollWords">
 	<span ng-repeat="madeWords in madeNames" class="animated bounce" ng-click="getInstagram(madeWords)">
 		{{ madeWords }}<BR>
@@ -35,14 +45,13 @@
 </div>
 
 <input type="text" class="buttonStyle" ng-model="name" placeholder="mix up to 13 words">
-
 <button ng-click="addMilk()">ADD</button><BR>
 
 <div ng-if="clean" ng-click="clear(clean)">
 	<i><b>suggestions:</b></i></div>
-<div class="suggestionsFooter">
-	<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">
-	{{ words }}
+		<div class="suggestionsFooter">
+			<div ng-repeat="words in clean track by $index" ng-click="addSyn(words)" ng-model="word">
+			{{ words }}
 	</div>
 </div>
 
