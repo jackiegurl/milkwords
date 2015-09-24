@@ -5,6 +5,7 @@ angular.module('cereal',[])
       $scope.milkImage = 'bottle.png'
       $scope.milkCount = 0;
       $scope.errorDisplay = ''
+      $scope.saveWords = [];
 
     $scope.addNames = function(link) {
       if($scope.milkCount < 12) {
@@ -44,7 +45,7 @@ angular.module('cereal',[])
    	 })
    }
 
-   $scope.getInstagram = function(tag) {
+   $scope.getInstagram = function(tag, array) {
     $scope.instaWordImages = {};
 
     var refinedTag = tag.split(' ').join('')
@@ -55,6 +56,7 @@ angular.module('cereal',[])
         $scope.instaWordImages[picturesOfTags[i].link] = picturesOfTags[i].images.thumbnail.url
       }
     })
+    $scope.likeWords(tag,array)
    }
 
    $scope.makeNames = function() { 
@@ -74,11 +76,16 @@ angular.module('cereal',[])
         $scope.madeNames.push(firstWord + ' and ' + namesArray[x]);
       }
      }
-     $scope.randomName = $scope.madeNames[1]
+     $scope.randomName = $scope.madeNames[2]
     $scope.names = ''
     $scope.clean = ''
   }
 
+  $scope.likeWords = function(likedWord, origArray) {
+    $scope.saveWords.push(likedWord)
+    $scope.removeName(origArray, likedWord)
+    console.log($scope.saveWords)
+  }
 
    $scope.clear = function(array) {
    	while(array.length) {
@@ -94,6 +101,17 @@ angular.module('cereal',[])
    	}
    }
 
+
+   $scope.removeSave = function(array, item) {
+    var getIndex = array.indexOf(item) 
+
+    if(getIndex > -1) {
+      array.splice(getIndex, 1)
+    }
+
+    $scope.madeNames.push(item)
+   }
+
    $scope.addMilk = function() {
     if($scope.milkCount < 12) {
       $scope.milkCount++
@@ -102,6 +120,7 @@ angular.module('cereal',[])
 
       var milk = './assets/img/bottleImages/' + number + '.png'
       $('body').css({'background-image': 'url('+milk+')'});
+      $('#object').addClass('slideIn')
     } else {
       $scope.errorDisplay = 'Sorry, 12 words is the maximum!'
     }

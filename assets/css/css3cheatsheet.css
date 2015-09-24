@@ -598,6 +598,7 @@ hatch
 
   animation-timing-function: ease-in-out; 
   -webkit-animation-timing-function: ease-in-out;
+   animation-iteration-count: 12;
 
   transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
@@ -624,7 +625,7 @@ hatch
   } 
   80% {
     transform: rotate(-1deg);
-  }   
+  }    
   100% {
     transform: rotate(0deg);
   }                 
@@ -730,8 +731,8 @@ pulse
   animation-name: pulse;
   -webkit-animation-name: pulse;  
 
-  animation-duration: 1.5s; 
-  -webkit-animation-duration: 1.5s;
+  animation-duration: 4s; 
+  -webkit-animation-duration: 4s;
 
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
@@ -777,8 +778,8 @@ floating
   animation-name: floating;
   -webkit-animation-name: floating;
 
-  animation-duration: 1.5s; 
-  -webkit-animation-duration: 1.5s;
+  animation-duration: 3s; 
+  -webkit-animation-duration: 3s;
 
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
@@ -789,7 +790,7 @@ floating
     transform: translateY(0%);  
   }
   50% {
-    transform: translateY(8%);  
+    transform: translateY(3%);  
   } 
   100% {
     transform: translateY(0%);
@@ -801,7 +802,7 @@ floating
     -webkit-transform: translateY(0%);  
   }
   50% {
-    -webkit-transform: translateY(8%);  
+    -webkit-transform: translateY(3%);  
   } 
   100% {
     -webkit-transform: translateY(0%);
@@ -818,8 +819,8 @@ tossing
   animation-name: tossing;
   -webkit-animation-name: tossing;  
 
-  animation-duration: 2.5s; 
-  -webkit-animation-duration: 2.5s;
+  animation-duration: 3.5s; 
+  -webkit-animation-duration: 3.5s;
 
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
@@ -830,7 +831,7 @@ tossing
     transform: rotate(-4deg); 
   }
   50% {
-    transform: rotate(4deg);
+    transform: rotate(3deg);
   }
   100% {
     transform: rotate(-4deg); 
@@ -842,7 +843,7 @@ tossing
     -webkit-transform: rotate(-4deg); 
   }
   50% {
-    -webkit-transform: rotate(4deg);
+    -webkit-transform: rotate(3deg);
   }
   100% {
     -webkit-transform: rotate(-4deg); 

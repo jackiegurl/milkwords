@@ -23,15 +23,9 @@ body {
   border-radius:20px;
 }
 
-.header:a {
-float:left;
-top:10px;
-text-decoration: none;
-}
 
 #object{
   background-color: transparent;
-  visibility: hidden;
 }
 
 .container {
@@ -50,6 +44,19 @@ text-decoration: none;
 	z-index:2;
   top:160px;
   left:650.5px;
+  background-color: transparent;
+  width: 135px;
+  height: 210px;
+  overflow: scroll;
+  overflow:hidden;
+}
+
+
+.scrollSaved {
+  position:absolute;
+  z-index:2;
+  top:160px;
+  left:1000.5px;
   background-color: transparent;
   width: 135px;
   height: 210px;

@@ -2,18 +2,14 @@
 <head>
 <title>milkWords</title>
   
-	<link href="./assets/css/stylesheet.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./assets/css/animate.css">
-  <link rel="stylesheet" href="./assets/css/css3cheatsheet.css">
-
-</head>
-<div class="header"><a href="file:///Users/jackiewung/MVP/index.html">retry</a></div>
+<link href="./assets/css/stylesheet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./assets/css/animate.css">
+<link rel="stylesheet" href="./assets/css/css3cheatsheet.css">
 
 <center>
 <body>
 
-
-<div id="object" class="hatch">
+<div id="object" class="pulse">
 <img src="./assets/img/face2.gif">
 </div>
 
@@ -23,11 +19,9 @@
 
 <div class="scrollBox">
 	<div class="words">
-	 <div class="animate bounce">
 		<div ng-repeat="createdWords in names track by $index" ng-click="removeName(names, createdWords)">
-			  {{ createdWords }}
-			 </div>
-		 </div>
+			{{ createdWords }}
+		</div>
 	 </div>
  </div>
 <BR>
@@ -45,9 +39,18 @@
 </div>
 
 <div class="scrollWords">
-	<span ng-repeat="madeWords in madeNames" class="animated bounce" ng-click="getInstagram(madeWords)">
-		{{ madeWords }}<BR>
-	</span>
+	  <span ng-repeat="madeWords in madeNames" ng-click="getInstagram(madeWords, madeNames)">
+			{{ madeWords }}<BR>
+ </span>
+</div>
+
+<div class="scrollSaved">
+	<div ng-if="saveWords.length > 0">
+	 <B>SAVED WORDS:</B>
+	 <span ng-repeat="saved in saveWords track by $index" ng-click="removeSave(saveWords, saved)">
+ 	{{ saved }}<BR>
+ 	</span>
+</div>
 </div>
 
 <input type="text" class="buttonStyle" ng-model="name" placeholder="mix up to 13 words">
@@ -55,8 +58,8 @@
 
 <div ng-if="clean" ng-click="clear(clean)">
 	<i><b>suggestions:</b></i></div>
-		<div class="suggestionsFooter">
-			<div ng-repeat="words in clean track by $index" ng-model="word">
+	 <div class="suggestionsFooter">
+		 <div ng-repeat="words in clean track by $index" ng-model="word">
 			 <div ng-click="removeName(clean, words)">
 				 <div ng-click="addSyn(words)">
 					 {{ words }}
@@ -67,7 +70,6 @@
 </BR>
 
 <button ng-click="makeNames()" class="gen">MILK</button><BR>
-
 
 <div ng-if="instaWordImages">
 	<div class=scrollInsta>
